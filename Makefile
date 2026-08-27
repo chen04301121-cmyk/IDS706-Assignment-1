@@ -1,4 +1,4 @@
-.PHONY: install test run docker-build docker-run docker-test clean
+.PHONY: install test lint run docker-build docker-run docker-test clean
 
 IMAGE_NAME := data-engineering-demo
 
@@ -30,3 +30,6 @@ docker-test:
 clean:
 	rm -rf __pycache__
 	rm -rf .pytest_cache
+
+lint:
+	ruff check .
